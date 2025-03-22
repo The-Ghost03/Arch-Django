@@ -1,0 +1,16 @@
+@startuml
+actor Operateur
+participant "Formulaire CommandeClient" as Form
+participant "LigneCommandeClient" as Ligne
+participant "Base de données" as DB
+participant "Produit (stock)" as Stock
+
+Operateur -> Form : Remplit infos client
+Form -> DB : Crée CommandeClient
+Operateur -> Form : Ajoute ligne commande (produit, quantité, montant)
+Form -> Ligne : Calcule total, monnaie
+Ligne -> DB : Enregistre LigneCommandeClient
+Ligne -> Stock : Déduit stock du produit
+Form -> DB : Met à jour statut commande (si payée)
+
+@enduml

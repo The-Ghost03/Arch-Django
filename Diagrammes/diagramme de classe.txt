@@ -1,0 +1,69 @@
+@startuml
+class Produit {
+  - id : int
+  - nom : str
+  - type : enum
+  - stock_actuel : int
+  - seuil_minimum : int
+  - prix_unitaire : decimal
+  - date_expiration : date
+}
+
+class Client {
+  - id : int
+  - nom : str
+  - contact : str
+  - email : str
+  - adresse : str
+}
+
+class Fournisseur {
+  - id : int
+  - nom : str
+  - contact : str
+  - email : str
+  - adresse : str
+}
+
+class CommandeClient {
+  - id : int
+  - date_commande : date
+  - statut : str
+}
+
+class LigneCommandeClient {
+  - quantite : int
+  - montant_recu : decimal
+  + prix_total()
+  + monnaie()
+}
+
+class CommandeFournisseur {
+  - id : int
+  - date_commande : date
+  - statut : str
+}
+
+class LigneCommandeFournisseur {
+  - quantite : int
+  - prix_unitaire : decimal
+}
+
+class MouvementStock {
+  - type : enum
+  - quantite : int
+  - date_mouvement : datetime
+  - commentaire : str
+}
+
+Produit "1" <-- "0..*" LigneCommandeClient : concerne
+CommandeClient "1" <-- "1..*" LigneCommandeClient : contient
+
+Produit "1" <-- "0..*" LigneCommandeFournisseur
+CommandeFournisseur "1" <-- "1..*" LigneCommandeFournisseur
+
+Produit "1" <-- "0..*" MouvementStock
+
+CommandeClient --> Client
+CommandeFournisseur --> Fournisseur
+@enduml
