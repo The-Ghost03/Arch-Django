@@ -1,6 +1,6 @@
 # 💼 Système de Gestion de Stock - Django
 
-Ce projet est une application web développée avec Django, conçue pour gérer les stocks d'une entreprise avec plusieurs rôles : administrateur, responsable de stock et vendeur. 
+Ce projet est une application web développée avec Django, conçue pour gérer les stocks d'une entreprise avec plusieurs rôles : administrateur, responsable de stock et vendeur.
 
 ## 🚀 Fonctionnalités principales
 
@@ -47,29 +47,28 @@ python manage.py runserver
 
 ## 🔐 Accès utilisateurs
 
-| Rôle            | Nom d'utilisateur | Mot de passe           |
-|-----------------|-------------------|------------------------|
-| Super Admin     | `admin`           | `admin`                |
-| Boss (admin)    | `boss`            | `cabinet-aurelis.com` |
-| Vendeur         | `vendeur`         | `cabinet-aurelis.com` |
+| Rôle         | Nom d'utilisateur | Mot de passe          |
+| ------------ | ----------------- | --------------------- |
+| Super Admin  | `admin`           | `admin`               |
+| Boss (admin) | `boss`            | `cabinet-aurelis.com` |
+| Vendeur      | `vendeur`         | `cabinet-aurelis.com` |
 
 👉 Accédez au **back-office Django** ici :  
 📍 [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ## 📁 Contenu du projet
 
-- `models.py` → Modèles des entités (produits, commandes, utilisateurs…)
-- `admin.py` → Interface d’administration personnalisée
-- `migrations/` → Historique de la base
-- `uml/` → Diagrammes UML au format PlantUML
-- `README.md` → Ce fichier
-- `requirements.txt` → Dépendances
+- `stock/models.py` → Modèles des entités : produits, clients, commandes, fournisseurs, etc.
+- `stock/admin.py` → Interface d’administration enrichie (formulaires, inlines, rôles)
+- `stock/migrations/` → Historique des modifications de la base de données
+- `Diagrammes/` → Diagrammes UML (cas d’utilisation, classes, séquence) au format PlantUML (`.txt`) et `.png`
+- `README.md` → Documentation du projet
+- `requirements.txt` → Dépendances Python à installer
 
 ## 📌 À savoir
 
-- Ce projet est lié au **devoir 2** d’Architecture des Systèmes d’Information.
-- Les syntaxes PlantUML utilisées pour générer les diagrammes sont disponibles dans le dossier `/uml`.
-- Visualisation possible des diagrammes sur [PlantText](https://www.planttext.com/)
+- Ce projet est lié au **devoir 1** d’Architecture des Systèmes d’Information.
+- Les syntaxes PlantUML utilisées pour générer les diagrammes
 
 ## 📜 Licence
 
